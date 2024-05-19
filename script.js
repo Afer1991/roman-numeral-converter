@@ -12,6 +12,7 @@ const checkNumber = () => {
     output.classList.add("wrong-output");
   } else if (input < 1){
     output.innerText = "Please enter a number greater than or equal to 1";
+    output.classList.remove("output");
     output.classList.add("wrong-output");
   } else {
     return convertToRomanNumeral(input);
@@ -28,6 +29,7 @@ const convertToRomanNumeral = (num) => {
     romanNumeralArr[3] = getUnits(romanNumeralArr[3]);
     convertedNumber = romanNumeralArr.join("");
     output.innerText = convertedNumber;
+    output.classList.remove("wrong-output");
     output.classList.add("output");
   } else if (num > 99) {
     romanNumeralArr[0] = getHundreds(romanNumeralArr[0]);
@@ -35,17 +37,20 @@ const convertToRomanNumeral = (num) => {
     romanNumeralArr[2] = getUnits(romanNumeralArr[2]);
     convertedNumber = romanNumeralArr.join("");
     output.innerText = convertedNumber;
+    output.classList.remove("wrong-output");
     output.classList.add("output");
   } else if (num > 9) {
     romanNumeralArr[0] = getTens(romanNumeralArr[0]);
     romanNumeralArr[1] = getUnits(romanNumeralArr[1]);
     convertedNumber = romanNumeralArr.join("");
     output.innerText = convertedNumber;
+    output.classList.remove("wrong-output");
     output.classList.add("output");
   } else {
     romanNumeralArr[0] = getUnits(romanNumeralArr[0]);
     convertedNumber = romanNumeralArr.join("");
     output.innerText = convertedNumber;
+    output.classList.remove("wrong-output");
     output.classList.add("output");
   }
 };
